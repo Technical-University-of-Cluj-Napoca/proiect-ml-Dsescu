@@ -1,18 +1,3 @@
-"""
-Utilitare comune pentru proiectul ML:
-- EDA
-- preprocesare
-- antrenare modele baseline
-- ajustare hiperparametri pentru toti algoritmii
-- curbe de invatare
-- SHAP global si local
-- salvare artefacte pentru Streamlit
-
-Date folosite:
-- clasificare: data/heart.csv, target = HeartDisease
-- regresie: data/insurance.csv, target = charges
-"""
-
 from __future__ import annotations
 
 import json
@@ -91,7 +76,6 @@ CLASSIFICATION_TARGET = "HeartDisease"
 REGRESSION_TARGET = "charges"
 
 def safe_name(name: str) -> str:
-    """Transforma numele modelului intr-un nume potrivit pentru fisiere."""
     return (
         name.lower()
         .replace(" ", "_")
@@ -108,26 +92,22 @@ def ensure_dir(path: str | Path) -> Path:
 
 
 def load_dataset(csv_path: str | Path) -> pd.DataFrame:
-    """Incarca un fisier CSV si intoarce DataFrame-ul."""
     return pd.read_csv(csv_path)
 
 
 def get_feature_target(df: pd.DataFrame, target: str) -> Tuple[pd.DataFrame, pd.Series]:
-    """Separa variabilele de intrare X de variabila tinta y."""
     X = df.drop(columns=[target])
     y = df[target]
     return X, y
 
 
 def infer_columns(X: pd.DataFrame) -> Tuple[List[str], List[str]]:
-    """Identifica automat coloanele numerice si categorice."""
     numeric_cols = X.select_dtypes(include=["number", "bool"]).columns.tolist()
     categorical_cols = X.select_dtypes(exclude=["number", "bool"]).columns.tolist()
     return numeric_cols, categorical_cols
 
 
 def make_one_hot_encoder() -> OneHotEncoder:
-    """Compatibil cu versiuni diferite de scikit-learn."""
     try:
         return OneHotEncoder(handle_unknown="ignore", sparse_output=False)
     except TypeError:  
@@ -135,12 +115,6 @@ def make_one_hot_encoder() -> OneHotEncoder:
 
 
 def build_preprocessor(X: pd.DataFrame) -> ColumnTransformer:
-    """
-    Creeaza preprocesorul:
-    - numeric: imputare cu mediana + standardizare
-    - categoric: imputare cu moda + one-hot encoding
-    Output-ul este dens, util pentru GaussianNB, SVM, SHAP etc.
-    """
     numeric_cols, categorical_cols = infer_columns(X)
 
     numeric_pipeline = Pipeline(
@@ -175,7 +149,6 @@ def split_data(
     test_size: float = 0.25,
     random_state: int = RANDOM_STATE,
 ) -> Tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]:
-    """Imparte datele in 75% train si 25% test/validare."""
     X, y = get_feature_target(df, target)
     stratify = y if task == "classification" else None
     return train_test_split(
@@ -188,7 +161,6 @@ def split_data(
 
 
 def make_pipeline(X: pd.DataFrame, model: Any) -> Pipeline:
-    """Creeaza pipeline complet: preprocesare + model."""
     return Pipeline(
         steps=[
             ("preprocessor", build_preprocessor(X)),
@@ -198,7 +170,6 @@ def make_pipeline(X: pd.DataFrame, model: Any) -> Pipeline:
 
 
 def get_feature_names_from_pipeline(pipeline: Pipeline) -> List[str]:
-    """Extrage numele coloanelor dupa one-hot encoding."""
     preprocessor = pipeline.named_steps["preprocessor"]
     try:
         return list(preprocessor.get_feature_names_out())
@@ -207,7 +178,6 @@ def get_feature_names_from_pipeline(pipeline: Pipeline) -> List[str]:
 
 
 def transform_with_pipeline(pipeline: Pipeline, X: pd.DataFrame) -> Tuple[np.ndarray, List[str]]:
-    """Aplica doar preprocesorul din pipeline."""
     Xt = pipeline.named_steps["preprocessor"].transform(X)
     Xt = np.asarray(Xt)
     feature_names = get_feature_names_from_pipeline(pipeline)
@@ -223,7 +193,6 @@ def _require_optional(package_name: str, estimator: Any) -> None:
 
 
 def get_classification_models(random_state: int = RANDOM_STATE) -> Dict[str, Any]:
-    """Toti algoritmii ceruti pentru clasificare."""
     _require_optional("XGBoost", XGBClassifier)
     _require_optional("CatBoost", CatBoostClassifier)
     _require_optional("Explainable Boosting Machine", ExplainableBoostingClassifier)
@@ -250,7 +219,6 @@ def get_classification_models(random_state: int = RANDOM_STATE) -> Dict[str, Any
 
 
 def get_regression_models(random_state: int = RANDOM_STATE) -> Dict[str, Any]:
-    """Toti algoritmii ceruti pentru regresie."""
     _require_optional("XGBoost", XGBRegressor)
     _require_optional("CatBoost", CatBoostRegressor)
     _require_optional("Explainable Boosting Machine", ExplainableBoostingRegressor)
@@ -285,7 +253,6 @@ def get_models(task: str, random_state: int = RANDOM_STATE) -> Dict[str, Any]:
 
 
 def get_classification_scores(estimator: Pipeline, X_test: pd.DataFrame) -> Optional[np.ndarray]:
-    """Scor continuu pentru ROC-AUC: probabilitate clasa 1 sau decision_function."""
     try:
         if hasattr(estimator, "predict_proba"):
             proba = estimator.predict_proba(X_test)
@@ -349,7 +316,6 @@ def evaluate_model(task: str, estimator: Pipeline, X_test: pd.DataFrame, y_test:
 
 
 def rank_results(task: str, results_df: pd.DataFrame) -> pd.DataFrame:
-    """Ordoneaza modelele in functie de metricile relevante."""
     df = results_df.copy()
     if task == "classification":
         sort_cols = [c for c in ["F1", "ROC_AUC", "Accuracy"] if c in df.columns]
@@ -367,7 +333,6 @@ def train_baseline_models(
     y_test: pd.Series,
     random_state: int = RANDOM_STATE,
 ) -> Tuple[pd.DataFrame, Dict[str, Pipeline]]:
-    """Antreneaza toate modelele de baza si intoarce tabelul cu metrici."""
     models = get_models(task, random_state)
     trained_models: Dict[str, Pipeline] = {}
     rows: List[Dict[str, Any]] = []
@@ -386,11 +351,6 @@ def train_baseline_models(
 
 
 def get_param_search_spaces(task: str) -> Dict[str, Dict[str, Any]]:
-    """
-    Spatiile de cautare pentru toate modelele.
-    method='grid' foloseste GridSearchCV.
-    method='bayes' foloseste BayesSearchCV daca scikit-optimize este instalat.
-    """
     if task == "classification":
         spaces = {
             "Naive Bayes": {
@@ -552,7 +512,6 @@ def get_param_search_spaces(task: str) -> Dict[str, Dict[str, Any]]:
 
 
 def bayes_space_to_small_grid(space: Dict[str, Any]) -> Dict[str, List[Any]]:
-    """Fallback daca skopt nu este instalat."""
     grid: Dict[str, List[Any]] = {}
     for key, value in space.items():
         if isinstance(value, list):
@@ -598,10 +557,6 @@ def tune_all_models(
     n_iter_bayes: int = 12,
     random_state: int = RANDOM_STATE,
 ) -> Tuple[pd.DataFrame, Dict[str, Pipeline], Dict[str, Dict[str, Any]]]:
-    """
-    Ajusteaza hiperparametrii pentru TOTI algoritmii, nu doar pentru primii 5.
-    Returneaza tabelul de rezultate, modelele ajustate si hiperparametrii gasiti.
-    """
     spaces = get_param_search_spaces(task)
     scoring = "f1" if task == "classification" else "neg_root_mean_squared_error"
 
@@ -666,7 +621,6 @@ def tune_all_models(
  
 
 def save_eda_plots(df: pd.DataFrame, target: str, task: str, output_dir: str | Path) -> Dict[str, str]:
-    """Genereaza si salveaza grafice EDA relevante."""
     output_dir = ensure_dir(output_dir)
     paths: Dict[str, str] = {}
 
@@ -789,7 +743,6 @@ def plot_learning_curve_for_model(
     title: str,
     cv: int = 3,
 ) -> plt.Figure:
-    """Genereaza figura pentru curba de invatare a unui model."""
     scoring = "f1" if task == "classification" else "neg_root_mean_squared_error"
     train_sizes = np.linspace(0.2, 1.0, 5)
 
@@ -834,7 +787,6 @@ def save_learning_curves(
     output_dir: str | Path,
     cv: int = 3,
 ) -> Dict[str, str]:
-    """Salveaza curbele de invatare pentru toti algoritmii ajustati."""
     output_dir = ensure_dir(output_dir)
     paths: Dict[str, str] = {}
     for name, estimator in estimators.items():
@@ -852,7 +804,6 @@ def save_learning_curves(
     return paths
 
 def _model_prediction_function(model: Any, task: str):
-    """Functie de predictie folosita de SHAP pe date deja transformate."""
 
     def predict_fn(X_array: np.ndarray) -> np.ndarray:
         X_array = np.asarray(X_array)
@@ -877,10 +828,6 @@ def compute_shap_explanation(
     task: str,
     max_background: int = 60,
 ) -> Tuple[Any, np.ndarray, List[str]]:
-    """
-    Calculeaza SHAP model-agnostic, deci functioneaza pentru toti algoritmii.
-    Pentru viteza, foloseste un esantion de background.
-    """
     if shap is None:
         raise ImportError("Pachetul shap nu este instalat. Ruleaza: pip install shap")
 
@@ -915,14 +862,6 @@ def save_shap_plots_for_model(
     output_dir: str | Path,
     sample_size: int = 80,
 ) -> Dict[str, str]:
-    """
-    Genereaza SHAP pentru un model:
-    - summary plot
-    - bar plot
-    - waterfall plot pentru o predictie
-    - force plot pentru o predictie
-    - scatter plots pentru primele 3 caracteristici importante
-    """
     if shap is None:
         raise ImportError("Pachetul shap nu este instalat.")
 
@@ -1016,7 +955,6 @@ def save_shap_plots_all_models(
     output_dir: str | Path,
     sample_size: int = 80,
 ) -> Dict[str, Dict[str, str]]:
-    """Genereaza SHAP pentru toti algoritmii ajustati."""
     output_dir = ensure_dir(output_dir)
     all_paths: Dict[str, Dict[str, str]] = {}
     for name, estimator in estimators.items():
@@ -1045,7 +983,6 @@ def make_local_shap_figures_for_input(
     X_background: pd.DataFrame,
     X_input: pd.DataFrame,
 ) -> Dict[str, plt.Figure]:
-    """Genereaza figuri SHAP locale pentru Streamlit."""
     if shap is None:
         raise ImportError("Pachetul shap nu este instalat.")
 
@@ -1088,7 +1025,6 @@ def save_artifacts(
     data_path: str | Path,
     target: str,
 ) -> None:
-    """Salveaza modelele, metricile si metadatele pentru Streamlit."""
     task_dir = ensure_dir(Path(output_root) / task)
     models_dir = ensure_dir(task_dir / "models")
 
@@ -1113,7 +1049,6 @@ def save_artifacts(
 
 
 def load_artifacts(task: str, output_root: str | Path = "outputs") -> Dict[str, Any]:
-    """Incarca artefactele salvate dupa rularea notebook-urilor sau train_all.py."""
     task_dir = Path(output_root) / task
     if not task_dir.exists():
         raise FileNotFoundError(f"Nu exista folderul {task_dir}. Ruleaza notebook-ul sau python src/train_all.py.")
@@ -1151,10 +1086,6 @@ def execute_complete_pipeline(
     n_iter_bayes: int = 12,
     shap_sample_size: int = 80,
 ) -> Dict[str, Any]:
-    """
-    Rulează pipeline-ul complet: EDA, Baseline, extrage Top N modele, 
-    face Hyperparameter Tuning, Learning Curves și SHAP doar pe ele.
-    """
     df = load_dataset(csv_path)
     X_train, X_test, y_train, y_test = split_data(df, target, task)
 

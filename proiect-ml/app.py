@@ -12,22 +12,3 @@ st.write(
     "și regresie pentru Insurance Charges."
 )
 
-st.markdown(
-    """
-### Pași de rulare
-
-```bash
-pip install -r requirements.txt
-python src/train_all.py
-streamlit run app.py
-```
-
-Dacă folosești `uv`:
-
-```bash
-uv sync
-uv run python src/train_all.py
-uv run streamlit run app.py
-```
-"""
-)

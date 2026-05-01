@@ -41,7 +41,6 @@ def render_task_page(task: str):
     st.title(settings["title"])
     st.markdown(f"**{settings['desc']}**")
 
-    # --- Dataset Info ---
     with st.expander("Explorare Dataset (EDA)", expanded=False):
         c1, c2, c3 = st.columns(3)
         c1.metric("Linii", df.shape[0])
@@ -56,14 +55,12 @@ def render_task_page(task: str):
             if (task_dir / p).exists():
                 st.image(str(task_dir / p))
 
-    # --- Load Models ---
     try:
         artifacts = cached_artifacts(task)
     except Exception:
         st.error("Modelele nu au fost găsite. Rulează `python src/train_all.py` în terminal mai întâi.")
         return
 
-    # --- Model Selection & Metrics ---
     st.divider()
     model_name = st.selectbox("Selectează modelul optimizat pentru testare:", list(artifacts["models"].keys()))
     model = artifacts["models"][model_name]
@@ -77,7 +74,6 @@ def render_task_page(task: str):
         with st.expander("Vezi hiperparametrii optimizați"):
             st.json(artifacts.get("best_params", {}).get(model_name, {}))
 
-    # --- Learning Curve ---
     with st.expander("Learning Curve (Overfitting Check)"):
         lc_path = OUTPUT_DIR / task / "figures" / "learning_curves" / f"learning_curve_{safe_name(model_name)}.png"
         if lc_path.exists():
@@ -115,7 +111,6 @@ def render_task_page(task: str):
         else:
             st.info(f"Cost estimat: **${pred:,.2f}**")
 
-        # --- Local SHAP ---
         st.markdown("#### De ce a luat modelul această decizie? (SHAP Local)")
         try:
             figures = make_local_shap_figures_for_input(task, model, df.drop(columns=[target]), X_input)
@@ -123,7 +118,6 @@ def render_task_page(task: str):
         except Exception as e:
             st.warning("SHAP-ul local nu a putut fi generat pentru acest model.")
             
-    # --- Global SHAP ---
     with st.expander("Importanța globală a variabilelor (SHAP Summary)"):
         shap_path = OUTPUT_DIR / task / "figures" / "shap" / f"shap_summary_{safe_name(model_name)}.png"
         if shap_path.exists():

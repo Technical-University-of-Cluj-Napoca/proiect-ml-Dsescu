@@ -1,9 +1,3 @@
-"""
-Script pentru rularea întregului pipeline direct din terminal.
-Va selecta automat Top 5 modele pentru tuning și SHAP.
-Rulare: python src/train_all.py
-"""
-
 from pathlib import Path
 from ml_utils import (
     CLASSIFICATION_TARGET,
