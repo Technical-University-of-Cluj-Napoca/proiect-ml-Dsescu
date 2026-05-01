@@ -1,0 +1,32 @@
+{
+  "Random Forest": {
+    "model__max_depth": "10",
+    "model__max_features": "sqrt",
+    "model__min_samples_leaf": "1",
+    "model__min_samples_split": "10",
+    "model__n_estimators": "200"
+  },
+  "CatBoost": {
+    "model__depth": "7",
+    "model__iterations": "300",
+    "model__l2_leaf_reg": "1",
+    "model__learning_rate": "0.03"
+  },
+  "Support Vector Machine": {
+    "model__C": "1",
+    "model__gamma": "0.01",
+    "model__kernel": "rbf",
+    "model__probability": "True"
+  },
+  "Explainable Boosting Machine": {
+    "model__interactions": "5",
+    "model__learning_rate": "0.03",
+    "model__max_bins": "128",
+    "model__max_leaves": "3"
+  },
+  "Logistic Regression": {
+    "model__C": "0.1",
+    "model__penalty": "l2",
+    "model__solver": "lbfgs"
+  }
+}

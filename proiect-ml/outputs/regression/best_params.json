@@ -1,0 +1,31 @@
+{
+  "Explainable Boosting Regressor": {
+    "model__interactions": "5",
+    "model__learning_rate": "0.005",
+    "model__max_bins": "256",
+    "model__max_leaves": "2"
+  },
+  "CatBoost Regressor": {
+    "model__depth": "3",
+    "model__iterations": "300",
+    "model__l2_leaf_reg": "1",
+    "model__learning_rate": "0.03"
+  },
+  "Random Forest Regressor": {
+    "model__max_depth": "5",
+    "model__max_features": "None",
+    "model__min_samples_leaf": "4",
+    "model__min_samples_split": "10",
+    "model__n_estimators": "100"
+  },
+  "XGBoost Regressor": {
+    "model__colsample_bytree": "0.9",
+    "model__learning_rate": "0.03",
+    "model__max_depth": "2",
+    "model__n_estimators": "250",
+    "model__subsample": "0.9"
+  },
+  "Linear Regression": {
+    "model__fit_intercept": "True"
+  }
+}

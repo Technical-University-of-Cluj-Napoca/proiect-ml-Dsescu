@@ -1,0 +1,13 @@
+{
+  "task": "classification",
+  "target": "HeartDisease",
+  "data_path": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\data\\heart.csv",
+  "models": {
+    "Random Forest": "models/random_forest.joblib",
+    "CatBoost": "models/catboost.joblib",
+    "Support Vector Machine": "models/support_vector_machine.joblib",
+    "Explainable Boosting Machine": "models/explainable_boosting_machine.joblib",
+    "Logistic Regression": "models/logistic_regression.joblib"
+  },
+  "ranking_metric": "F1, ROC_AUC, Accuracy"
+}

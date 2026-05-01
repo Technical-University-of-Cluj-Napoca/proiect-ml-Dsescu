@@ -1,0 +1,7 @@
+{
+  "Random Forest": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\learning_curves\\learning_curve_random_forest.png",
+  "CatBoost": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\learning_curves\\learning_curve_catboost.png",
+  "Support Vector Machine": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\learning_curves\\learning_curve_support_vector_machine.png",
+  "Explainable Boosting Machine": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\learning_curves\\learning_curve_explainable_boosting_machine.png",
+  "Logistic Regression": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\learning_curves\\learning_curve_logistic_regression.png"
+}

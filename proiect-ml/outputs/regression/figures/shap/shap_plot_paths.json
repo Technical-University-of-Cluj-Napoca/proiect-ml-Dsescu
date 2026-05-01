@@ -1,0 +1,62 @@
+{
+  "Explainable Boosting Regressor": {
+    "summary": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_summary_explainable_boosting_regressor.png",
+    "bar": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_bar_explainable_boosting_regressor.png",
+    "waterfall": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_waterfall_explainable_boosting_regressor.png",
+    "force": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_force_explainable_boosting_regressor.png",
+    "scatter": [
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_scatter_explainable_boosting_regressor_cat_smoker_yes.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_scatter_explainable_boosting_regressor_cat_smoker_no.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_scatter_explainable_boosting_regressor_num_age.png"
+    ],
+    "top_features_json": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_top_features_explainable_boosting_regressor.json"
+  },
+  "CatBoost Regressor": {
+    "summary": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_summary_catboost_regressor.png",
+    "bar": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_bar_catboost_regressor.png",
+    "waterfall": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_waterfall_catboost_regressor.png",
+    "force": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_force_catboost_regressor.png",
+    "scatter": [
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_scatter_catboost_regressor_cat_smoker_yes.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_scatter_catboost_regressor_cat_smoker_no.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_scatter_catboost_regressor_num_age.png"
+    ],
+    "top_features_json": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_top_features_catboost_regressor.json"
+  },
+  "Random Forest Regressor": {
+    "summary": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_summary_random_forest_regressor.png",
+    "bar": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_bar_random_forest_regressor.png",
+    "waterfall": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_waterfall_random_forest_regressor.png",
+    "force": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_force_random_forest_regressor.png",
+    "scatter": [
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_scatter_random_forest_regressor_cat_smoker_no.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_scatter_random_forest_regressor_num_age.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_scatter_random_forest_regressor_cat_smoker_yes.png"
+    ],
+    "top_features_json": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_top_features_random_forest_regressor.json"
+  },
+  "XGBoost Regressor": {
+    "summary": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_summary_xgboost_regressor.png",
+    "bar": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_bar_xgboost_regressor.png",
+    "waterfall": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_waterfall_xgboost_regressor.png",
+    "force": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_force_xgboost_regressor.png",
+    "scatter": [
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_scatter_xgboost_regressor_cat_smoker_no.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_scatter_xgboost_regressor_num_age.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_scatter_xgboost_regressor_num_bmi.png"
+    ],
+    "top_features_json": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_top_features_xgboost_regressor.json"
+  },
+  "Linear Regression": {
+    "summary": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_summary_linear_regression.png",
+    "bar": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_bar_linear_regression.png",
+    "waterfall": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_waterfall_linear_regression.png",
+    "force": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_force_linear_regression.png",
+    "scatter": [
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_scatter_linear_regression_cat_smoker_no.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_scatter_linear_regression_cat_smoker_yes.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_scatter_linear_regression_num_age.png"
+    ],
+    "top_features_json": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\shap\\shap_top_features_linear_regression.json"
+  }
+}
