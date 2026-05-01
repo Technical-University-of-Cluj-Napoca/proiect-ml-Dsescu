@@ -1,0 +1,13 @@
+{
+  "task": "regression",
+  "target": "charges",
+  "data_path": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\data\\insurance.csv",
+  "models": {
+    "Explainable Boosting Regressor": "models/explainable_boosting_regressor.joblib",
+    "CatBoost Regressor": "models/catboost_regressor.joblib",
+    "Random Forest Regressor": "models/random_forest_regressor.joblib",
+    "XGBoost Regressor": "models/xgboost_regressor.joblib",
+    "Linear Regression": "models/linear_regression.joblib"
+  },
+  "ranking_metric": "RMSE, MAE, R2"
+}

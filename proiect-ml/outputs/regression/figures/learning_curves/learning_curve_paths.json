@@ -1,0 +1,7 @@
+{
+  "Explainable Boosting Regressor": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\learning_curves\\learning_curve_explainable_boosting_regressor.png",
+  "CatBoost Regressor": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\learning_curves\\learning_curve_catboost_regressor.png",
+  "Random Forest Regressor": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\learning_curves\\learning_curve_random_forest_regressor.png",
+  "XGBoost Regressor": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\learning_curves\\learning_curve_xgboost_regressor.png",
+  "Linear Regression": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\learning_curves\\learning_curve_linear_regression.png"
+}

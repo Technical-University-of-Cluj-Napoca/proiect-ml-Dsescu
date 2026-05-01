@@ -1,0 +1,20 @@
+[project]
+name = "ml-comparative-analysis"
+version = "0.1.0"
+description = "Analiza comparata a modelelor ML pentru clasificare si regresie, cu SHAP si Streamlit"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "matplotlib",
+    "joblib",
+    "shap",
+    "streamlit",
+    "xgboost",
+    "catboost",
+    "interpret",
+    "scikit-optimize",
+    "ipykernel",
+    "notebook",
+]

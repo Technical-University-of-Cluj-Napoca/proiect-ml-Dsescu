@@ -1,0 +1,62 @@
+{
+  "Random Forest": {
+    "summary": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_summary_random_forest.png",
+    "bar": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_bar_random_forest.png",
+    "waterfall": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_waterfall_random_forest.png",
+    "force": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_force_random_forest.png",
+    "scatter": [
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_scatter_random_forest_cat_st_slope_up.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_scatter_random_forest_cat_chestpaintype_asy.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_scatter_random_forest_cat_st_slope_flat.png"
+    ],
+    "top_features_json": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_top_features_random_forest.json"
+  },
+  "CatBoost": {
+    "summary": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_summary_catboost.png",
+    "bar": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_bar_catboost.png",
+    "waterfall": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_waterfall_catboost.png",
+    "force": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_force_catboost.png",
+    "scatter": [
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_scatter_catboost_cat_st_slope_up.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_scatter_catboost_cat_chestpaintype_asy.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_scatter_catboost_num_oldpeak.png"
+    ],
+    "top_features_json": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_top_features_catboost.json"
+  },
+  "Support Vector Machine": {
+    "summary": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_summary_support_vector_machine.png",
+    "bar": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_bar_support_vector_machine.png",
+    "waterfall": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_waterfall_support_vector_machine.png",
+    "force": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_force_support_vector_machine.png",
+    "scatter": [
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_scatter_support_vector_machine_cat_st_slope_up.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_scatter_support_vector_machine_cat_st_slope_flat.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_scatter_support_vector_machine_num_oldpeak.png"
+    ],
+    "top_features_json": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_top_features_support_vector_machine.json"
+  },
+  "Explainable Boosting Machine": {
+    "summary": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_summary_explainable_boosting_machine.png",
+    "bar": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_bar_explainable_boosting_machine.png",
+    "waterfall": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_waterfall_explainable_boosting_machine.png",
+    "force": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_force_explainable_boosting_machine.png",
+    "scatter": [
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_scatter_explainable_boosting_machine_cat_st_slope_up.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_scatter_explainable_boosting_machine_cat_st_slope_flat.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_scatter_explainable_boosting_machine_cat_chestpaintype_asy.png"
+    ],
+    "top_features_json": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_top_features_explainable_boosting_machine.json"
+  },
+  "Logistic Regression": {
+    "summary": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_summary_logistic_regression.png",
+    "bar": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_bar_logistic_regression.png",
+    "waterfall": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_waterfall_logistic_regression.png",
+    "force": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_force_logistic_regression.png",
+    "scatter": [
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_scatter_logistic_regression_cat_chestpaintype_asy.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_scatter_logistic_regression_cat_st_slope_up.png",
+      "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_scatter_logistic_regression_cat_st_slope_flat.png"
+    ],
+    "top_features_json": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\classification\\figures\\shap\\shap_top_features_logistic_regression.json"
+  }
+}

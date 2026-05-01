@@ -1,0 +1,14 @@
+[
+  {
+    "feature": "cat__ST_Slope_Up",
+    "mean_abs_shap": 0.10590785510259626
+  },
+  {
+    "feature": "cat__ChestPainType_ASY",
+    "mean_abs_shap": 0.071519839553878
+  },
+  {
+    "feature": "cat__ST_Slope_Flat",
+    "mean_abs_shap": 0.06855740481710645
+  }
+]

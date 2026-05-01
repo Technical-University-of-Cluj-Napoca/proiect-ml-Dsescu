@@ -1,0 +1,14 @@
+[
+  {
+    "feature": "cat__smoker_no",
+    "mean_abs_shap": 6679.741484324138
+  },
+  {
+    "feature": "num__age",
+    "mean_abs_shap": 3298.700895709991
+  },
+  {
+    "feature": "num__bmi",
+    "mean_abs_shap": 2021.7645875962583
+  }
+]

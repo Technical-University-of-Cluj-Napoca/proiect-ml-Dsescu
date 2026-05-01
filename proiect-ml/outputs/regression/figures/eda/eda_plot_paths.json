@@ -1,0 +1,7 @@
+{
+  "target_distribution": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\eda\\01_target_distribution.png",
+  "numeric_distributions": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\eda\\02_numeric_distributions.png",
+  "categorical_frequencies": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\eda\\03_categorical_frequencies.png",
+  "correlation_matrix": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\eda\\04_correlation_matrix.png",
+  "numeric_target_relationships": "c:\\Users\\Diana\\OneDrive\\Desktop\\ml_project_complete\\outputs\\regression\\figures\\eda\\05_numeric_target_relationships.png"
+}

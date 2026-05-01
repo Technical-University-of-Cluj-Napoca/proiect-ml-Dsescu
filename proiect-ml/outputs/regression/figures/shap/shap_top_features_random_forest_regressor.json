@@ -1,0 +1,14 @@
+[
+  {
+    "feature": "cat__smoker_no",
+    "mean_abs_shap": 4835.06957464927
+  },
+  {
+    "feature": "num__age",
+    "mean_abs_shap": 3307.5986028887833
+  },
+  {
+    "feature": "cat__smoker_yes",
+    "mean_abs_shap": 2718.745859446259
+  }
+]
